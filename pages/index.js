@@ -61,7 +61,7 @@ export default function Home() {
   };
 
   const onButtoClick = () => {
-    fetch("CV - Victor Balbuena - ISC - Frontend.pdf").then((response) => {
+    fetch("Portfolio.pdf").then((response) => {
       response.blob().then((blob) => {
         // Creating new object of PDF file
         const fileURL = window.URL.createObjectURL(blob);
@@ -92,7 +92,7 @@ export default function Home() {
         />
       </Head>
 
-      <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 scroll-smooth hover:scroll-auto">
+      <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 scroll-smooth hover:scroll-auto transition-colors duration-700">
         <section
           className="mb-16
         "
@@ -242,14 +242,11 @@ export default function Home() {
 
         <section className="mx-auto max-w-6xl main-font">
           <div className="mb-10">
-            <h3 className="text-center text-3xl py-1 dark:text-white second-font">
+            <h3 className="text-center text-3xl pt-5 pb-1 dark:text-white second-font">
               PERFIL
             </h3>
-            <p className="text-center py-2 leading-8 text-gray-80 dark:text-gray-300">
-              Graduado de Ingeniería en Sistemas Computacionales en el 2021, he
-              trabajado en proyectos web para empresas e instituciones con
-              actividades principalmente en el Frontend con tecnologías como
-              Angular y React.
+            <p className="text-md md:text-xl text-center pt-8 pb-3 leading-8 text-gray-80 dark:text-gray-300">
+            Graduado de Ingeniería en Sistemas Computacionales del Instituto Tecnológico de Zacatepec con especialidad en el Desarrollo WEB y Móvil en el 2021. He trabajado en proyectos web de empresas e instituciones, desarrollando actividades principalmente en el área del frontend usando tecnologías como Angular y React.
             </p>
 
             <div className="grid grid-rows-2 gap-10 grid-cols-4 text-black dark:text-white my-14">
@@ -327,9 +324,43 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* <section className="mx-auto max-w-6xl pb-10">
+        <div>
+            <h3 className="text-center mb-5 text-3xl pt-5 pb-1 dark:text-white second-font">
+              EXPERIENCIA
+            </h3>
+          </div>
+          <div className="text-black dark:text-white text-md md:text-xl pt-5">
+            <div className="mb-6">
+              <p className="flex flex-wrap justify-between"><span className="font-bold text-2xl">Centro de Ciencias Genómicas UNAM</span> <span className="float-right">Cuernavaca, Morelos (Remoto)</span></p>
+              <p className="pt-1"><span className="font-bold">Becario</span> — Febrero, 2021 / Junio, 2021</p>
+              <p className="my-4 text-gray-80 dark:text-gray-300">
+              Realicé mi proyecto de residencia profesional desarrollando una aplicación web con React
+consumiendo datos de importancia proporcionada por el Centro de Ciencias Genómicas
+para crear un banco de información facilitando el acceso a la misma.
+              </p>
+            </div>
+
+            <div className="w-full flex items-center justify-center text-gray-80 dark:text-gray-300">_____</div>
+
+            <div className="mt-6">
+              <p className="flex flex-wrap justify-between"><span className="font-bold text-2xl">Process Ecology Inc.</span><span className="float-right">Calgary, Canadá (Remoto)</span></p>
+              <p className="mt-1"><span className="font-bold">Frontend Web Developer</span> — Agosto 2021 / Abril 2023</p>
+              <p className="my-4 text-gray-80 dark:text-gray-300">
+              Participé en el desarrollo de proyectos que involucraban la creación de aplicaciones
+dinámicas y escalables así como el mantenimiento de proyectos existentes.
+Impementé, mejoré y propuse ideas y funcionalidades a los proyectos en los que participé,
+así como también realicé el consumo y despliegue de información de forma dinámica
+siempre buscando el mejor rendimiento.
+Algunas de las tecnologías utilizadas a lo largo de mi estancia fueron Angular, Typescript,
+Net Core, RxJS, Bootstrap, entre otras.
+              </p>
+            </div>
+          </div>
+        </section> */}
         <section className="mx-auto max-w-6xl pb-10">
           <div>
-            <h3 className="text-center mb-5 text-3xl py-1 dark:text-white second-font">
+            <h3 className="text-center mb-5 text-3xl pt-5 pb-1 dark:text-white second-font">
               PROYECTOS
             </h3>
             <p className="text-md py-2 leading-8 text-gray-80 dark:text-gray-300"></p>
