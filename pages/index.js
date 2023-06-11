@@ -21,9 +21,9 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 import Image from "next/image";
 import me from "../public/photo.png";
 import { useState } from "react";
-import project1 from "../public/movinfo.png";
-import project2 from "../public/chatsqlim.png";
-import project3 from "../public/aireviews.png";
+import project1 from "../public/IMGMovieInfo.png";
+import project2 from "../public/IMGCHatSQL.png";
+import project3 from "../public/imgrevs.png";
 import "animate.css";
 import "../lib/i18next";
 import { useTranslation } from "react-i18next";
@@ -147,7 +147,7 @@ export default function Home() {
             </h2>
 
             <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto dark:text-gray-300 main-font">
-              Soy un Ingniero en Sistamas Computacionales Méxicano con más de 2
+              Soy un Ingeniero en Sistemas Computacionales Méxicano con más de 2
               años de experiencia en el desarrollo frontend.
             </p>
             <div className="flex items-center justify-center gap-10 mt-6 mb-3">
@@ -423,7 +423,7 @@ Net Core, RxJS, Bootstrap, entre otras.
             <div className="basis-1/3 flex-1 main-font">
               <Image
                 src={project3}
-                className="rounded-lg object-cover"
+                className="rounded-lg object-cover dark:border-cyan-300 dark:border-2"
                 width={"100%"}
                 height={"100%"}
                 alt="Proyect image"
@@ -478,7 +478,7 @@ Net Core, RxJS, Bootstrap, entre otras.
             <div className="basis-1/3 flex-1 main-font mb-20">
               <Image
                 src={project1}
-                className="rounded-lg object-cover"
+                className="rounded-lg object-cover border-cyan-900 border-2"
                 width={"100%"}
                 height={"100%"}
                 alt="Proyect image"
