@@ -236,7 +236,13 @@ export default function Home() {
             </h3> */}
           </div>
           <div className="relative mx-auto bg-gradient-to-b from-teal-800 rounded-full w-80 h-80 mt-8 overflow-hidden md:h-96 md:w-96">
-            <Image src={me} className="scale-110" alt="Profile picture" />
+            <Image src={me}
+                   className="scale-110"
+                   alt="Profile picture"
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                   priority={ true }
+                   quality={60}
+                   />
           </div>
         </section>
 
@@ -373,6 +379,8 @@ Net Core, RxJS, Bootstrap, entre otras.
                 width={"100%"}
                 height={"100%"}
                 alt="Proyect image"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                quality={60}
               />
               <div className="flex flex-col mt-4 items-center justify-center">
                 <p className="text-xl font-bold text-black dark:text-white mb-2">
@@ -420,13 +428,72 @@ Net Core, RxJS, Bootstrap, entre otras.
                 </button>
               </div>
             </div>
+            
             <div className="basis-1/3 flex-1 main-font">
+              <Image
+                src={project1}
+                className="rounded-lg object-cover border-cyan-900 border-2"
+                width={"100%"}
+                height={"100%"}
+                alt="Proyect image"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                quality={50}
+              />
+              <div className="flex flex-col mt-4 items-center justify-center">
+                <p className="text-xl font-bold text-black dark:text-white mb-2">
+                  MOVInfo
+                </p>
+                <p className="text-black text-center dark:text-white">
+                  Aplicaión sobre peliculas para consultar detalles del
+                  filme y crear lista de programas de favoritos.
+                </p>
+                <p className="text-black dark:text-white mt-4 border-dashed border-black dark:border-blue-100 rounded-lg border-2 py-2 px-5 text-center">
+                  Angular - Local Storage - CSS
+                </p>
+              </div>
+
+              <div className="flex mt-4">
+                <button
+                  onClick={enlaceProyecto1}
+                  className="flex-1 relative inline-flex items-center justify-center px-0.5 py-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+                >
+                  <span className="flex-1 relative px-4 py-2 transition-all ease-in duration-300 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    <div className="flex items-center justify-center">
+                      <FontAwesomeIcon
+                        icon={faArrowUpRightFromSquare}
+                        width={15}
+                        className="mr-3"
+                      ></FontAwesomeIcon>
+                      Proyecto
+                    </div>
+                  </span>
+                </button>
+
+                <button
+                  onClick={enlaceCodigoProyecto1}
+                  className="flex-1 ml-4 relative inline-flex items-center justify-center px-0.5 py-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+                >
+                  <span className="flex-1 relative px-4 py-2 transition-all ease-in duration-300 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    <div className="flex items-center justify-center">
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        width={15}
+                        className="mr-3"
+                      />
+                      Código
+                    </div>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div className="basis-1/3 flex-1 main-font mb-20">
               <Image
                 src={project3}
                 className="rounded-lg object-cover dark:border-cyan-300 dark:border-2"
                 width={"100%"}
                 height={"100%"}
                 alt="Proyect image"
+                quality={75}
               />
               <div className="flex flex-col mt-4 items-center justify-center">
                 <p className="text-xl font-bold text-black dark:text-white mb-2">
@@ -460,62 +527,6 @@ Net Core, RxJS, Bootstrap, entre otras.
 
                 <button
                   onClick={enlaceCodigoProyecto3}
-                  className="flex-1 ml-4 relative inline-flex items-center justify-center px-0.5 py-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
-                >
-                  <span className="flex-1 relative px-4 py-2 transition-all ease-in duration-300 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                    <div className="flex items-center justify-center">
-                      <FontAwesomeIcon
-                        icon={faGithub}
-                        width={15}
-                        className="mr-3"
-                      />
-                      Código
-                    </div>
-                  </span>
-                </button>
-              </div>
-            </div>
-            <div className="basis-1/3 flex-1 main-font mb-20">
-              <Image
-                src={project1}
-                className="rounded-lg object-cover border-cyan-900 border-2"
-                width={"100%"}
-                height={"100%"}
-                alt="Proyect image"
-              />
-              <div className="flex flex-col mt-4 items-center justify-center">
-                <p className="text-xl font-bold text-black dark:text-white mb-2">
-                  MOVInfo
-                </p>
-                <p className="text-black text-center dark:text-white">
-                  Aplicaión sobre series y peliculas para consultar detalles del
-                  filme con interación al localstorage para crear y consultar
-                  lista programas de favoritos.
-                </p>
-                <p className="text-black dark:text-white mt-4 border-dashed border-black dark:border-blue-100 rounded-lg border-2 py-2 px-5 text-center">
-                  Angular - Local Storage - Fully Responsive
-                </p>
-              </div>
-
-              <div className="flex mt-4">
-                <button
-                  onClick={enlaceProyecto1}
-                  className="flex-1 relative inline-flex items-center justify-center px-0.5 py-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
-                >
-                  <span className="flex-1 relative px-4 py-2 transition-all ease-in duration-300 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                    <div className="flex items-center justify-center">
-                      <FontAwesomeIcon
-                        icon={faArrowUpRightFromSquare}
-                        width={15}
-                        className="mr-3"
-                      ></FontAwesomeIcon>
-                      Proyecto
-                    </div>
-                  </span>
-                </button>
-
-                <button
-                  onClick={enlaceCodigoProyecto1}
                   className="flex-1 ml-4 relative inline-flex items-center justify-center px-0.5 py-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
                 >
                   <span className="flex-1 relative px-4 py-2 transition-all ease-in duration-300 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
