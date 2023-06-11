@@ -364,7 +364,7 @@ Net Core, RxJS, Bootstrap, entre otras.
             </div>
           </div>
         </section> */}
-        <section className="mx-auto max-w-6xl pb-10">
+        <section className="mx-auto max-w-6xl pb-1">
           <div>
             <h3 className="text-center mb-5 text-3xl pt-5 pb-1 dark:text-white second-font">
               PROYECTOS
@@ -448,7 +448,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                   filme y crear lista de programas de favoritos.
                 </p>
                 <p className="text-black dark:text-white mt-4 border-dashed border-black dark:border-blue-100 rounded-lg border-2 py-2 px-5 text-center">
-                  Angular - Local Storage - CSS
+                  Angular - CSS - Local Storage
                 </p>
               </div>
 
@@ -486,7 +486,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                 </button>
               </div>
             </div>
-            <div className="basis-1/3 flex-1 main-font mb-20">
+            <div className="basis-1/3 flex-1 main-font mb-10">
               <Image
                 src={project3}
                 className="rounded-lg object-cover dark:border-cyan-300 dark:border-2"
@@ -518,7 +518,6 @@ Net Core, RxJS, Bootstrap, entre otras.
                         icon={faArrowUpRightFromSquare}
                         width={15}
                         className="mr-3"
-                        alt="Proyect image"
                       ></FontAwesomeIcon>
                       Proyecto
                     </div>
@@ -545,6 +544,44 @@ Net Core, RxJS, Bootstrap, entre otras.
           </div>
         </section>
       </main>
+
+      <footer className="bg-gray-200 dark:bg-gray-700">
+        <div className="mx-auto max-w-6xl px-10 py-20 md:py-30 flex justify-between">
+          <p className="text-black dark:text-white text-xl md:text-2xl font-bold">
+          Victor Balbuena
+          </p>
+
+          <div className="text-black dark:text-white flex gap-5 md:gap-10">
+          <a
+                href="https://www.linkedin.com/in/victor-balbuena-32107824b/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon
+                  className="text-black dark:text-white hover:scale-125 transition-all"
+                  icon={faLinkedin}
+                  width={27}
+                ></FontAwesomeIcon>
+              </a>
+
+              <a href="https://twitter.com/VictorBalbue" target="_blank" rel="noreferrer">
+                <FontAwesomeIcon
+                  className="text-black dark:text-white hover:scale-125 transition-all"
+                  icon={faTwitter}
+                  width={27}
+                ></FontAwesomeIcon>
+              </a>
+
+              <a href="https://github.com/victorbalbuena" target="_blank" rel="noreferrer">
+                <FontAwesomeIcon
+                  className="text-black dark:text-white hover:scale-125 transition-all"
+                  icon={faGithub}
+                  width={27}
+                ></FontAwesomeIcon>
+              </a>
+          </div>
+        </div>
+        </footer>
     </div>
   );
 }
