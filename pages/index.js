@@ -4,6 +4,7 @@ import {
   faAngular,
   faBootstrap,
   faCss3,
+  faGit,
   faGithub,
   faHtml5,
   faJs,
@@ -24,9 +25,11 @@ import { useState } from "react";
 import project1 from "../public/imgmovies.png";
 import project2 from "../public/imgchat.png";
 import project3 from "../public/imgrevs.png";
+import project4 from "../public/imgshop.png";
 import "animate.css";
 import "../lib/i18next";
 import { useTranslation } from "react-i18next";
+import { SiTailwindcss } from "react-icons/si";
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -58,6 +61,14 @@ export default function Home() {
 
   const enlaceCodigoProyecto3 = () => {
     window.open("https://github.com/victorbalbuena/IAReviews", "_blank");
+  };
+
+  const enlaceProyecto4 = () => {
+    window.open("https://minima-store.netlify.app/", "_blank");
+  };
+
+  const enlaceCodigoProyecto4 = () => {
+    window.open("https://github.com/victorbalbuena/reactCartShop", "_blank");
   };
 
   const onButtoClick = () => {
@@ -163,7 +174,11 @@ export default function Home() {
                 ></FontAwesomeIcon>
               </a>
 
-              <a href="https://twitter.com/VictorBalbue" target="_blank" rel="noreferrer">
+              <a
+                href="https://twitter.com/VictorBalbue"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon
                   className="text-black dark:text-white hover:scale-125 transition-all"
                   icon={faTwitter}
@@ -171,7 +186,11 @@ export default function Home() {
                 ></FontAwesomeIcon>
               </a>
 
-              <a href="https://github.com/victorbalbuena" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/victorbalbuena"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon
                   className="text-black dark:text-white hover:scale-125 transition-all"
                   icon={faGithub}
@@ -236,13 +255,14 @@ export default function Home() {
             </h3> */}
           </div>
           <div className="relative mx-auto bg-gradient-to-b from-teal-800 rounded-full w-80 h-80 mt-8 overflow-hidden md:h-96 md:w-96">
-            <Image src={me}
-                   className="scale-110"
-                   alt="Profile picture"
-                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                   priority={ true }
-                   quality={60}
-                   />
+            <Image
+              src={me}
+              className="scale-110"
+              alt="Profile picture"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={true}
+              quality={60}
+            />
           </div>
         </section>
 
@@ -252,10 +272,14 @@ export default function Home() {
               PERFIL
             </h3>
             <p className="text-md md:text-xl text-center pt-8 pb-3 leading-8 text-gray-80 dark:text-gray-300">
-            Graduado de Ingeniería en Sistemas Computacionales del Instituto Tecnológico de Zacatepec con especialidad en el Desarrollo WEB y Móvil en el 2021. He trabajado en proyectos web de empresas e instituciones, desarrollando actividades principalmente en el área del frontend usando tecnologías como Angular y React.
+              Graduado de Ingeniería en Sistemas Computacionales del Instituto
+              Tecnológico de Zacatepec con especialidad en el Desarrollo WEB y
+              Móvil en el 2021. He trabajado en proyectos web de empresas e
+              instituciones, desarrollando actividades principalmente en el área
+              del frontend usando tecnologías como Angular y React.
             </p>
 
-            <div className="grid grid-rows-2 gap-10 grid-cols-4 text-black dark:text-white my-14">
+            <div className="grid grid-rows-2 gap-10 grid-cols-5 text-black dark:text-white my-14">
               <div className="flex flex-col items-center gap-2">
                 <FontAwesomeIcon
                   icon={faAngular}
@@ -281,6 +305,15 @@ export default function Home() {
                   className="text-black dark:text-white"
                 ></FontAwesomeIcon>
                 <p>SQL</p>
+              </div>
+
+              <div className="flex flex-col items-center gap-2">
+                <FontAwesomeIcon
+                  icon={faGit}
+                  width={28}
+                  className="text-black dark:text-white"
+                ></FontAwesomeIcon>
+                <p>GIT</p>
               </div>
 
               <div className="flex flex-col items-center gap-2">
@@ -317,6 +350,16 @@ export default function Home() {
                   className="text-black dark:text-white"
                 ></FontAwesomeIcon>
                 <p>SASS</p>
+              </div>
+
+              <div className="flex flex-col items-center gap-2">
+                {/* <FontAwesomeIcon
+                  icon={tailwindIcon}
+                  width={20}
+                  className="text-black dark:text-white"
+                ></FontAwesomeIcon> */}
+                <SiTailwindcss className="text-2xl text-black dark:text-white" />
+                <p>Tailwind</p>
               </div>
 
               <div className="flex flex-col items-center gap-2">
@@ -428,11 +471,67 @@ Net Core, RxJS, Bootstrap, entre otras.
                 </button>
               </div>
             </div>
-            
+
+            <div className="basis-1/3 flex-1 main-font mb-10">
+              <Image
+                src={project4}
+                className="rounded-lg object-cover border-[2px] border-[#e4e3e3] dark:border-none"
+                width={"100%"}
+                height={"100%"}
+                alt="Proyect image"
+                quality={75}
+              />
+              <div className="flex flex-col mt-4 items-center justify-center">
+                <p className="text-xl font-bold text-black dark:text-white mb-2">
+                  MINIMASTORE
+                </p>
+                <p className="text-black dark:text-white text-center">
+                  Tienda en línea, funciones de agregar al carrito, listado y
+                  páginado de productos.
+                </p>
+                <p className="text-black dark:text-white mt-4 border-dashed border-black dark:border-blue-100 rounded-lg border-2 py-2 px-5">
+                  React - Tailwindcss
+                </p>
+              </div>
+              <div className="flex mt-4">
+                <button
+                  onClick={enlaceProyecto4}
+                  className="flex-1 relative inline-flex items-center justify-center px-0.5 py-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+                >
+                  <span className="flex-1 relative px-4 py-2 transition-all ease-in duration-300 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    <div className="flex items-center justify-center">
+                      <FontAwesomeIcon
+                        icon={faArrowUpRightFromSquare}
+                        width={15}
+                        className="mr-3"
+                      ></FontAwesomeIcon>
+                      Proyecto
+                    </div>
+                  </span>
+                </button>
+
+                <button
+                  onClick={enlaceCodigoProyecto4}
+                  className="flex-1 ml-4 relative inline-flex items-center justify-center px-0.5 py-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+                >
+                  <span className="flex-1 relative px-4 py-2 transition-all ease-in duration-300 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    <div className="flex items-center justify-center">
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        width={15}
+                        className="mr-3"
+                      />
+                      Código
+                    </div>
+                  </span>
+                </button>
+              </div>
+            </div>
+
             <div className="basis-1/3 flex-1 main-font">
               <Image
                 src={project1}
-                className="rounded-lg object-cover border-cyan-900 border-2"
+                className="rounded-lg object-cover border-[2px] border-[#e4e3e3] dark:border-none"
                 width={"100%"}
                 height={"100%"}
                 alt="Proyect image"
@@ -444,8 +543,8 @@ Net Core, RxJS, Bootstrap, entre otras.
                   MOVInfo
                 </p>
                 <p className="text-black text-center dark:text-white">
-                  Aplicaión sobre peliculas para consultar detalles del
-                  filme y crear lista de programas de favoritos.
+                  Aplicaión sobre peliculas para consultar detalles del filme y
+                  crear lista de programas de favoritos.
                 </p>
                 <p className="text-black dark:text-white mt-4 border-dashed border-black dark:border-blue-100 rounded-lg border-2 py-2 px-5 text-center">
                   Angular - CSS - Local Storage
@@ -548,40 +647,48 @@ Net Core, RxJS, Bootstrap, entre otras.
       <footer className="bg-gray-200 dark:bg-gray-700">
         <div className="mx-auto max-w-6xl px-10 py-20 md:py-30 flex justify-between">
           <p className="text-black dark:text-white text-xl md:text-2xl font-bold">
-          Victor Balbuena
+            Victor Balbuena
           </p>
 
           <div className="text-black dark:text-white flex gap-5 md:gap-10">
-          <a
-                href="https://www.linkedin.com/in/victor-balbuena-32107824b/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FontAwesomeIcon
-                  className="text-black dark:text-white hover:scale-125 transition-all"
-                  icon={faLinkedin}
-                  width={27}
-                ></FontAwesomeIcon>
-              </a>
+            <a
+              href="https://www.linkedin.com/in/victor-balbuena-32107824b/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon
+                className="text-black dark:text-white hover:scale-125 transition-all"
+                icon={faLinkedin}
+                width={27}
+              ></FontAwesomeIcon>
+            </a>
 
-              <a href="https://twitter.com/VictorBalbue" target="_blank" rel="noreferrer">
-                <FontAwesomeIcon
-                  className="text-black dark:text-white hover:scale-125 transition-all"
-                  icon={faTwitter}
-                  width={27}
-                ></FontAwesomeIcon>
-              </a>
+            <a
+              href="https://twitter.com/VictorBalbue"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon
+                className="text-black dark:text-white hover:scale-125 transition-all"
+                icon={faTwitter}
+                width={27}
+              ></FontAwesomeIcon>
+            </a>
 
-              <a href="https://github.com/victorbalbuena" target="_blank" rel="noreferrer">
-                <FontAwesomeIcon
-                  className="text-black dark:text-white hover:scale-125 transition-all"
-                  icon={faGithub}
-                  width={27}
-                ></FontAwesomeIcon>
-              </a>
+            <a
+              href="https://github.com/victorbalbuena"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon
+                className="text-black dark:text-white hover:scale-125 transition-all"
+                icon={faGithub}
+                width={27}
+              ></FontAwesomeIcon>
+            </a>
           </div>
         </div>
-        </footer>
+      </footer>
     </div>
   );
 }
