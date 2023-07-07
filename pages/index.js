@@ -158,8 +158,8 @@ export default function Home() {
             </h2>
 
             <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto dark:text-gray-300 main-font">
-              Soy un Ingeniero en Sistemas Computacionales Méxicano con más de 2
-              años de experiencia en el desarrollo frontend.
+              Ingeniero en Sistemas Computacionales con experiencia en el
+              desarrollo de aplicaciones web con tecnologías Front End.
             </p>
             <div className="flex items-center justify-center gap-10 mt-6 mb-3">
               <a
@@ -174,7 +174,7 @@ export default function Home() {
                 ></FontAwesomeIcon>
               </a>
 
-              <a
+              {/* <a
                 href="https://twitter.com/VictorBalbue"
                 target="_blank"
                 rel="noreferrer"
@@ -184,7 +184,7 @@ export default function Home() {
                   icon={faTwitter}
                   width={27}
                 ></FontAwesomeIcon>
-              </a>
+              </a> */}
 
               <a
                 href="https://github.com/victorbalbuena"
@@ -431,7 +431,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                 </p>
                 <p className="text-black dark:text-white text-center">
                   Usando la librería de Openai SQLChat es capaz de crear
-                  consultas SQL a partir de un texto.
+                  consultas SQL a partir de una cadena de texto.
                 </p>
                 <p className="text-black dark:text-white mt-4 border-dashed border-black dark:border-blue-100 rounded-lg border-2 py-2 px-5">
                   Angular - Node - Express
@@ -543,8 +543,8 @@ Net Core, RxJS, Bootstrap, entre otras.
                   MOVInfo
                 </p>
                 <p className="text-black text-center dark:text-white">
-                  Aplicaión sobre peliculas para consultar detalles del filme y
-                  crear lista de programas de favoritos.
+                  Aplicaión de peliculas para consultas de detalles del filme y
+                  creación de listas de programas de favoritos.
                 </p>
                 <p className="text-black dark:text-white mt-4 border-dashed border-black dark:border-blue-100 rounded-lg border-2 py-2 px-5 text-center">
                   Angular - CSS - Local Storage
@@ -646,7 +646,7 @@ Net Core, RxJS, Bootstrap, entre otras.
 
       <footer className="bg-gray-200 dark:bg-gray-700">
         <div className="mx-auto max-w-6xl px-10 py-20 md:py-30 flex justify-between">
-          <p className="text-black dark:text-white text-xl md:text-2xl font-bold">
+          <p className="text-black dark:text-white text-2xl md:text-3xl font-bold">
             Victor Balbuena
           </p>
 
@@ -663,7 +663,7 @@ Net Core, RxJS, Bootstrap, entre otras.
               ></FontAwesomeIcon>
             </a>
 
-            <a
+            {/* <a
               href="https://twitter.com/VictorBalbue"
               target="_blank"
               rel="noreferrer"
@@ -673,7 +673,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                 icon={faTwitter}
                 width={27}
               ></FontAwesomeIcon>
-            </a>
+            </a> */}
 
             <a
               href="https://github.com/victorbalbuena"
