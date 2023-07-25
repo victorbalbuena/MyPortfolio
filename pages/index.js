@@ -163,7 +163,7 @@ export default function Home() {
             </p>
             <div className="flex items-center justify-center gap-10 mt-6 mb-3">
               <a
-                href="https://www.linkedin.com/in/victor-balbuena-32107824b/"
+                href="https://www.linkedin.com/in/victorbalbuena/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -652,7 +652,7 @@ Net Core, RxJS, Bootstrap, entre otras.
 
           <div className="text-black dark:text-white flex gap-5 md:gap-10">
             <a
-              href="https://www.linkedin.com/in/victor-balbuena-32107824b/"
+              href="https://www.linkedin.com/in/victorbalbuena/"
               target="_blank"
               rel="noreferrer"
             >
