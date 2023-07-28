@@ -177,13 +177,13 @@ export default function Home() {
           >
             <div className="flex flex-col justify-center items-center flex-1">
               <button
-                className="bg-teal-600 dark:bg-gray-600 text-white w-full p-2 mb-2 rounded-lg"
+                className="bg-teal-600 dark:bg-gray-600 hover:bg-teal-700 hover:dark:bg-gray-800 transition-colors text-white w-full p-2 mb-2 rounded-lg"
                 onClick={() => handleChangeLng("en")}
               >
                 English
               </button>
               <button
-                className="bg-teal-600 dark:bg-gray-600 text-white w-full p-2 rounded-lg"
+                className="bg-teal-600 dark:bg-gray-600 hover:bg-teal-700 hover:dark:bg-gray-800 transition-colors text-white w-full p-2 rounded-lg"
                 onClick={() => handleChangeLng("es")}
               >
                 Spanish
