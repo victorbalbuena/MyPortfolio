@@ -19,6 +19,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 import { BsFillMoonStarsFill } from "react-icons/bs";
+import { BiWorld } from "react-icons/bi";
 import Image from "next/image";
 import me from "../public/photo.png";
 import { useState } from "react";
@@ -30,13 +31,22 @@ import "animate.css";
 import "../lib/i18next";
 import { useTranslation } from "react-i18next";
 import { SiTailwindcss } from "react-icons/si";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Home() {
   const { t, i18n } = useTranslation();
   const [darkMode, setDarkMode] = useState(true);
+  const [toggle, setToggle] = useState(false);
 
   const handleChangeLng = (lng) => {
     i18n.changeLanguage(lng);
+    setToggle((prev) => !prev);
+    toast.success(t("languageMsg"), {
+      style: {
+        background: "#3A5A3A",
+        color: "#FFFFFF",
+      },
+    });
   };
 
   const enlaceProyecto1 = () => {
@@ -72,14 +82,14 @@ export default function Home() {
   };
 
   const onButtoClick = () => {
-    fetch("Portfolio.pdf").then((response) => {
+    fetch("portfolioEng.pdf").then((response) => {
       response.blob().then((blob) => {
         // Creating new object of PDF file
         const fileURL = window.URL.createObjectURL(blob);
         // Setting various property values
         let alink = document.createElement("a");
         alink.href = fileURL;
-        alink.download = "CV - Victor Balbuena - ISC - Frontend.pdf";
+        alink.download = "CV - Victor Balbuena - WEB Developer.pdf";
         alink.click();
       });
     });
@@ -113,11 +123,19 @@ export default function Home() {
             {/* <h1 className="text-xl font-mono dark:text-white">
               Victor Balbuena
             </h1> */}
+            {/* handleChangeLng("en") */}
+            {/* handleChangeLng("es") */}
             <ul className="flex items-center">
               <li>
                 <BsFillMoonStarsFill
                   onClick={() => setDarkMode(!darkMode)}
                   className="cursor-pointer text-2xl dark:text-white"
+                />
+              </li>
+              <li>
+                <BiWorld
+                  onClick={() => setToggle((prev) => !prev)}
+                  className="cursor-pointer text-3xl ml-10 dark:text-white"
                 />
               </li>
               {/* <li>
@@ -152,14 +170,34 @@ export default function Home() {
               </li> */}
             </ul>
           </nav>
+          <div
+            className={`${
+              toggle ? "flex" : "hidden"
+            } p-6 bg-slate-700 dark:bg-slate-400 absolute top-12 right-5 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+          >
+            <div className="flex flex-col justify-center items-center flex-1">
+              <button
+                className="bg-teal-600 dark:bg-gray-600 text-white w-full p-2 mb-2 rounded-lg"
+                onClick={() => handleChangeLng("en")}
+              >
+                English
+              </button>
+              <button
+                className="bg-teal-600 dark:bg-gray-600 text-white w-full p-2 rounded-lg"
+                onClick={() => handleChangeLng("es")}
+              >
+                Spanish
+              </button>
+            </div>
+          </div>
+          <Toaster />
           <div className="text-center p-1 md:pt-8 md:pb-1">
             <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl mb-4 second-font">
               Victor Balbuena
             </h2>
 
             <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto dark:text-gray-300 main-font">
-              Ingeniero en Sistemas Computacionales con experiencia en el
-              desarrollo de aplicaciones web con tecnologías Front End.
+              {t("AboutMe")}
             </p>
             <div className="flex items-center justify-center gap-10 mt-6 mb-3">
               <a
@@ -209,7 +247,7 @@ export default function Home() {
                     className=" mr-4"
                     width={15}
                   ></FontAwesomeIcon>
-                  Descargar CV
+                  {t("DownloadCV")}
                 </div>
               </span>
             </button>
@@ -268,16 +306,16 @@ export default function Home() {
 
         <section className="mx-auto max-w-6xl main-font">
           <div className="mb-10">
-            <h3 className="text-center text-3xl pt-5 pb-1 dark:text-white second-font">
-              PERFIL
+            {/* <h3 className="text-center text-3xl pt-5 pb-1 dark:text-white second-font uppercase">
+              {t("Profile")}
             </h3>
             <p className="text-md md:text-xl text-center pt-8 pb-3 leading-8 text-gray-80 dark:text-gray-300">
-              Graduado de Ingeniería en Sistemas Computacionales del Instituto
-              Tecnológico de Zacatepec con especialidad en el Desarrollo WEB y
-              Móvil en el 2021. He trabajado en proyectos web de empresas e
-              instituciones, desarrollando actividades principalmente en el área
-              del frontend usando tecnologías como Angular y React.
-            </p>
+              {t("ProfileDesc")}
+            </p> */}
+
+            <h3 className="text-center text-3xl pt-5 pb-1 dark:text-white second-font uppercase">
+              {t("Skills")}
+            </h3>
 
             <div className="grid grid-rows-2 gap-10 grid-cols-5 text-black dark:text-white my-14">
               <div className="flex flex-col items-center gap-2">
@@ -409,8 +447,8 @@ Net Core, RxJS, Bootstrap, entre otras.
         </section> */}
         <section className="mx-auto max-w-6xl pb-1">
           <div>
-            <h3 className="text-center mb-5 text-3xl pt-5 pb-1 dark:text-white second-font">
-              PROYECTOS
+            <h3 className="text-center mb-5 text-3xl pt-5 pb-1 dark:text-white second-font uppercase">
+              {t("Projects")}
             </h3>
             <p className="text-md py-2 leading-8 text-gray-80 dark:text-gray-300"></p>
           </div>
@@ -430,8 +468,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                   SQL Chat Bot
                 </p>
                 <p className="text-black dark:text-white text-center">
-                  Usando la librería de Openai SQLChat es capaz de crear
-                  consultas SQL a partir de una cadena de texto.
+                  {t("ChatSQLText")}
                 </p>
                 <p className="text-black dark:text-white mt-4 border-dashed border-black dark:border-blue-100 rounded-lg border-2 py-2 px-5">
                   Angular - Node - Express
@@ -449,7 +486,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                         width={15}
                         className="mr-3"
                       ></FontAwesomeIcon>
-                      Proyecto
+                      {t("Project")}
                     </div>
                   </span>
                 </button>
@@ -465,7 +502,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                         width={15}
                         className="mr-3"
                       />
-                      Código
+                      {t("Code")}
                     </div>
                   </span>
                 </button>
@@ -486,8 +523,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                   MINIMASTORE
                 </p>
                 <p className="text-black dark:text-white text-center">
-                  Tienda en línea, funciones de agregar al carrito, listado y
-                  páginado de productos.
+                  {t("MinimaStoreText")}
                 </p>
                 <p className="text-black dark:text-white mt-4 border-dashed border-black dark:border-blue-100 rounded-lg border-2 py-2 px-5">
                   React - Tailwindcss
@@ -505,7 +541,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                         width={15}
                         className="mr-3"
                       ></FontAwesomeIcon>
-                      Proyecto
+                      {t("Project")}
                     </div>
                   </span>
                 </button>
@@ -521,7 +557,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                         width={15}
                         className="mr-3"
                       />
-                      Código
+                      {t("Code")}
                     </div>
                   </span>
                 </button>
@@ -543,8 +579,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                   MOVInfo
                 </p>
                 <p className="text-black text-center dark:text-white">
-                  Aplicaión de peliculas para consultas de detalles del filme y
-                  creación de listas de programas de favoritos.
+                  {t("MovInfoText")}
                 </p>
                 <p className="text-black dark:text-white mt-4 border-dashed border-black dark:border-blue-100 rounded-lg border-2 py-2 px-5 text-center">
                   Angular - CSS - Local Storage
@@ -563,7 +598,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                         width={15}
                         className="mr-3"
                       ></FontAwesomeIcon>
-                      Proyecto
+                      {t("Project")}
                     </div>
                   </span>
                 </button>
@@ -579,7 +614,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                         width={15}
                         className="mr-3"
                       />
-                      Código
+                      {t("Code")}
                     </div>
                   </span>
                 </button>
@@ -599,8 +634,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                   AI Reviews
                 </p>
                 <p className="text-black dark:text-white text-center">
-                  Crea reseñas de restaurantes a partir de un comentario usando
-                  inteligencia artificial.
+                  {t("AiReviewsText")}
                 </p>
                 <p className="text-black dark:text-white mt-4 border-dashed border-black dark:border-blue-100 rounded-lg border-2 py-2 px-5">
                   Angular - Node - Express
@@ -618,7 +652,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                         width={15}
                         className="mr-3"
                       ></FontAwesomeIcon>
-                      Proyecto
+                      {t("Project")}
                     </div>
                   </span>
                 </button>
@@ -634,7 +668,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                         width={15}
                         className="mr-3"
                       />
-                      Código
+                      {t("Code")}
                     </div>
                   </span>
                 </button>
