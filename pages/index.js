@@ -28,6 +28,7 @@ import project2 from "../public/imgchat.png";
 import project3 from "../public/imgrevs.png";
 import project4 from "../public/imgshop.png";
 import project5 from "../public/imgshortly.png";
+import project6 from "../public/imglogin.png";
 import "animate.css";
 import "../lib/i18next";
 import { useTranslation } from "react-i18next";
@@ -88,6 +89,14 @@ export default function Home() {
 
   const enlaceCodigoProyecto5 = () => {
     window.open("https://github.com/victorbalbuena/Shortly", "_blank");
+  };
+
+  const enlaceProyecto6 = () => {
+    window.open("https://login-poke-prueba.web.app/users/sign-in", "_blank");
+  };
+
+  const enlaceCodigoProyecto6 = () => {
+    window.open("https://github.com/victorbalbuena/PokeInfo", "_blank");
   };
 
   const onButtoClick = () => {
@@ -526,6 +535,62 @@ Net Core, RxJS, Bootstrap, entre otras.
             </div>
             <div className="basis-1/3 flex-1 main-font">
               <Image
+                src={project6}
+                className="rounded-lg object-cover border-[2px] border-[#e4e3e3] dark:border-none"
+                width={"100%"}
+                height={"100%"}
+                alt="Proyect image"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                quality={50}
+              />
+              <div className="flex flex-col mt-4 items-center justify-center">
+                <p className="text-xl font-bold text-black dark:text-white mb-2">
+                  Login with google auth
+                </p>
+                <p className="text-black text-center dark:text-white">
+                  {t("LoginText")}
+                </p>
+                <p className="text-black dark:text-white mt-4 border-dashed border-black dark:border-blue-100 rounded-lg border-2 py-2 px-5 text-center">
+                  Angular - Firebase - Google Auth
+                </p>
+              </div>
+
+              <div className="flex mt-4">
+                <button
+                  onClick={enlaceProyecto6}
+                  className="flex-1 relative inline-flex items-center justify-center px-0.5 py-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+                >
+                  <span className="flex-1 relative px-4 py-2 transition-all ease-in duration-300 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    <div className="flex items-center justify-center">
+                      <FontAwesomeIcon
+                        icon={faArrowUpRightFromSquare}
+                        width={15}
+                        className="mr-3"
+                      ></FontAwesomeIcon>
+                      {t("Project")}
+                    </div>
+                  </span>
+                </button>
+
+                <button
+                  onClick={enlaceCodigoProyecto1}
+                  className="flex-1 ml-4 relative inline-flex items-center justify-center px-0.5 py-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+                >
+                  <span className="flex-1 relative px-4 py-2 transition-all ease-in duration-300 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    <div className="flex items-center justify-center">
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        width={15}
+                        className="mr-3"
+                      />
+                      {t("Code")}
+                    </div>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div className="basis-1/3 flex-1 main-font">
+              <Image
                 src={project1}
                 className="rounded-lg object-cover border-[2px] border-[#e4e3e3] dark:border-none"
                 width={"100%"}
@@ -580,6 +645,7 @@ Net Core, RxJS, Bootstrap, entre otras.
                 </button>
               </div>
             </div>
+
             <div className="basis-1/3 flex-1">
               <Image
                 src={project2}
