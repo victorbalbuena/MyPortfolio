@@ -16,6 +16,8 @@ import {
 import {
   faArrowUpRightFromSquare,
   faDatabase,
+  faFire,
+  faHashtag,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 import { BsFillMoonStarsFill } from "react-icons/bs";
@@ -344,6 +346,16 @@ export default function Home() {
                 ></FontAwesomeIcon>
                 <p>Angular</p>
               </div>
+              {/* faFire */}
+
+              <div className="flex flex-col items-center gap-2">
+                <FontAwesomeIcon
+                  icon={faFire}
+                  width={20}
+                  className="text-black dark:text-white"
+                ></FontAwesomeIcon>
+                <p>Firebase</p>
+              </div>
 
               <div className="flex flex-col items-center gap-2">
                 <FontAwesomeIcon
@@ -352,6 +364,15 @@ export default function Home() {
                   className="text-black dark:text-white"
                 ></FontAwesomeIcon>
                 <p>Javascript</p>
+              </div>
+
+              <div className="flex flex-col items-center gap-2">
+                <FontAwesomeIcon
+                  icon={faHashtag}
+                  width={20}
+                  className="text-black dark:text-white"
+                ></FontAwesomeIcon>
+                <p>C#</p>
               </div>
 
               <div className="flex flex-col items-center gap-2">
